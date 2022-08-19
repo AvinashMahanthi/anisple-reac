@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [showjumphost, setShowjumphost] = useState("");
-  const [showVtest, setShowVtest] = useState("");
-  setShowVtest("hidden");
-  setShowjumphost("hidden");
+  const [showjumphost, setShowjumphost] = useState("hidden");
+  const [showVtest, setShowVtest] = useState("hidden");
 
   const handleshowhide = (event) => {
     const responseID = event.target.value;
+    console.log(responseID);
     if (responseID == "jumphost") {
       setShowjumphost("show");
       setShowVtest("hidden");
+      console.log(showjumphost);
     } else if (responseID == "vtest") {
       setShowVtest("show");
       setShowjumphost("hidden");
+      console.log(showVtest);
     }
   };
 
@@ -71,9 +72,9 @@ function App() {
               <fieldset>
                 <div className="radio-container">
                   <input type="radio" id="DMZ" name="DMZ" />
-                  <label for="windows">DMZ</label>
+                  <label htmlFor="DMZ">DMZ</label>
                   <input type="radio" id="NON-DMZ" name="NON-DMZ" />
-                  <label for="NON-DMZ">NON-DMZ</label>
+                  <label htmlFor="NON-DMZ">NON-DMZ</label>
                 </div>
               </fieldset>
               <fieldset>
@@ -85,7 +86,13 @@ function App() {
               {/* <br> */}
             </div>
 
-            <div className={{ showVtest }} id="vtest-Details">
+            <div
+              className={{ showVtest }}
+              id="vtest-Details"
+              onChange={(e) => {
+                handleshowhide(e);
+              }}
+            >
               {/* <!-- Login-IP --> */}
               <fieldset>
                 <input
