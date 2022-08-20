@@ -66,6 +66,18 @@ fieldset {
     transition: border-color 0.3s ease-in-out;
     border: 1px solid #aaa;
 }
+
+.execute-btn{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #df3812;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
 #contForm button[type="submit"] {
     cursor: pointer;
     width: 100%;

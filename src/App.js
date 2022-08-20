@@ -10,16 +10,6 @@ function App() {
     const responseID = event.target.value;
     console.log(responseID);
     setShowOptions(responseID);
-
-    // if (responseID == "jumphost") {
-    //   setShowjumphost("show");
-    //   setShowVtest("hidden");
-    //   console.log(showjumphost);
-    // } else if (responseID == "vtest") {
-    //   setShowVtest("show");
-    //   setShowjumphost("hidden");
-    //   console.log(showVtest);
-    // }
   };
 
   return (
@@ -78,32 +68,24 @@ function App() {
                   <div className="radio-container">
                     <input type="radio" id="DMZ" name="DMZ" />
                     <label htmlFor="DMZ">DMZ</label>
-                    <input type="radio" id="NON-DMZ" name="NON-DMZ" />
+                    <input type="radio" id="NON-DMZ" name="DMZ" />
                     <label htmlFor="NON-DMZ">NON-DMZ</label>
                   </div>
                 </fieldset>
-                <fieldset>
-                  <button
-                    name="executeCommand"
-                    type="submit"
-                    id="contact-submit"
-                  >
-                    Execute Command
-                  </button>
-                </fieldset>
-                {/* <h2>Command: bla bla vla....</h2> */}
-                {/* <br> */}
+                {/* <fieldset> */}
+                <button
+                  name="executeCommand"
+                  className="execute-btn"
+                  id="submit"
+                  type="button"
+                >
+                  Execute Command
+                </button>
               </div>
             )}
 
             {showOptions === "vtest" && (
-              <div
-                className="show"
-                id="vtest-Details"
-                onChange={(e) => {
-                  handleshowhide(e);
-                }}
-              >
+              <div className="show" id="vtest-Details">
                 {/* <!-- Login-IP --> */}
                 <fieldset>
                   <input
